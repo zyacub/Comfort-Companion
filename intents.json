@@ -1,0 +1,1552 @@
+{
+    "friendlyName" : "First mental health project",
+    "logQueries" : true,
+    "uniqueName" : "Comfort_Companion",
+    "defaults" : {
+        "defaults" : {
+            "assistant_initiation" : "task://greeting",
+            "fallback" : "task://fallback",
+            "collect" : {
+                "validate_on_failure" : "task://collect_fallback"
+            }
+        }
+    },
+    "styleSheet" : {
+        "style_sheet" : {
+            "collect" : {
+                "validate" : {
+                    "on_failure" : {
+                        "repeat_question" : false,
+                        "messages" : [
+                            {
+                                "say" : {
+                                    "speech" : "I didn't get that. What did you say?"
+                                }
+                            },
+                            {
+                                "say" : {
+                                    "speech" : "I still didn't catch that. Please repeat."
+                                }
+                            },
+                            {
+                                "say" : {
+                                    "speech" : "Let's try one last time. Say it again please."
+                                }
+                            }
+                        ]
+                    },
+                    "on_success" : { "say" : { "speech" : "" } },
+                    "max_attempts" : 4
+                }
+            },
+            "voice" : {
+                "say_voice" : "Polly.Matthew"
+            },
+            "name" : ""
+        }
+    },
+    "fieldTypes" : [
+        {
+            "uniqueName" : "reason",
+            "values" : [
+                {
+                    "language" : "en-US",
+                    "value" : "test anxiety",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "because of a test",
+                    "synonymOf" : "test anxiety"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "due to a test",
+                    "synonymOf" : "test anxiety"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "I have a really big test",
+                    "synonymOf" : "test anxiety"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "I have a test and",
+                    "synonymOf" : "test anxiety"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "I have a test",
+                    "synonymOf" : "test anxiety"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "test",
+                    "synonymOf" : "test anxiety"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "testing",
+                    "synonymOf" : "test anxiety"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "There is a big test coming up",
+                    "synonymOf" : "test anxiety"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "there is a test",
+                    "synonymOf" : "test anxiety"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "there is a big test",
+                    "synonymOf" : "test anxiety"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "none",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "no",
+                    "synonymOf" : "none"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "nothing",
+                    "synonymOf" : "none"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "school",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "grades",
+                    "synonymOf" : "school"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "low grades",
+                    "synonymOf" : "school"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "struggling in school",
+                    "synonymOf" : "school"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "academic",
+                    "synonymOf" : "school"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "academic stress",
+                    "synonymOf" : "school"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "userPref",
+            "values" : [
+                {
+                    "language" : "en-US",
+                    "value" : "read",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "talk",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "I want to talk",
+                    "synonymOf" : "talk"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "I want resources to talk",
+                    "synonymOf" : "talk"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "I want to talk to someone",
+                    "synonymOf" : "talk"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "I want to read",
+                    "synonymOf" : "read"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "I want resources to read",
+                    "synonymOf" : "read"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "I want to read resources online",
+                    "synonymOf" : "read"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "I want online resources that I can read",
+                    "synonymOf" : "read"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "I want to talk to someo\\ne online",
+                    "synonymOf" : "talk"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "Person",
+            "values" : [
+                {
+                    "language" : "en-US",
+                    "value" : "friend",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "best friend",
+                    "synonymOf" : "friend"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "grandpa",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "uncle",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "mom",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "mother",
+                    "synonymOf" : "mom"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "pet",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "cat",
+                    "synonymOf" : "pet"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "dog",
+                    "synonymOf" : "pet"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "bird",
+                    "synonymOf" : "pet"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "lizard",
+                    "synonymOf" : "pet"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "animal",
+                    "synonymOf" : "pet"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "teacher",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "child",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "daughter",
+                    "synonymOf" : "child"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "son",
+                    "synonymOf" : "child"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "kid",
+                    "synonymOf" : "child"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "mama",
+                    "synonymOf" : "mom"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "acquaintance",
+                    "synonymOf" : "friend"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "sibling",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "brother",
+                    "synonymOf" : "sibling"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "sister",
+                    "synonymOf" : "sibling"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "step brother",
+                    "synonymOf" : "sibling"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "step sister",
+                    "synonymOf" : "sibling"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "wife",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "student",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "partner",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "bf",
+                    "synonymOf" : "partner"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "boyfriend",
+                    "synonymOf" : "partner"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "gf",
+                    "synonymOf" : "partner"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "girlfriend",
+                    "synonymOf" : "partner"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "husband",
+                    "synonymOf" : "partner"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "spouse",
+                    "synonymOf" : "partner"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "crisis",
+            "values" : [
+                {
+                    "language" : "en-US",
+                    "value" : "anxiety",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "depression",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "sad",
+                    "synonymOf" : "depression"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "sadness",
+                    "synonymOf" : "depression"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "depressed",
+                    "synonymOf" : "depression"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "down",
+                    "synonymOf" : "depression"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "grief",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "loss",
+                    "synonymOf" : "grief"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "passed",
+                    "synonymOf" : "grief"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "passed away",
+                    "synonymOf" : "grief"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "death",
+                    "synonymOf" : "grief"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "died",
+                    "synonymOf" : "grief"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "lost",
+                    "synonymOf" : "grief"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "self-harm",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "cut",
+                    "synonymOf" : "self-harm"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "cutting",
+                    "synonymOf" : "self-harm"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "burn",
+                    "synonymOf" : "self-harm"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "burning",
+                    "synonymOf" : "self-harm"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "hurt",
+                    "synonymOf" : "self-harm"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "hurting",
+                    "synonymOf" : "self-harm"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "isolation/loneliness",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "have no one",
+                    "synonymOf" : "isolation/loneliness"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "alone",
+                    "synonymOf" : "isolation/loneliness"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "lonely",
+                    "synonymOf" : "isolation/loneliness"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "isolated",
+                    "synonymOf" : "isolation/loneliness"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "body image",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "ugly",
+                    "synonymOf" : "body image"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "fat",
+                    "synonymOf" : "body image"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "too fat",
+                    "synonymOf" : "body image"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "skinny",
+                    "synonymOf" : "body image"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "too skinny",
+                    "synonymOf" : "body image"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "break up",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "broke up",
+                    "synonymOf" : "break up"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "self harm",
+                    "synonymOf" : "self-harm"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "divorce",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "divorced",
+                    "synonymOf" : "divorce"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "conflicts",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "mistreatment",
+                    "synonymOf" : "conflicts"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "argument",
+                    "synonymOf" : "conflicts"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "mistreated",
+                    "synonymOf" : "conflicts"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "relationship issues",
+                    "synonymOf" : "conflicts"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "fight",
+                    "synonymOf" : "conflicts"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "mad at me",
+                    "synonymOf" : "conflicts"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "angry at me",
+                    "synonymOf" : "conflicts"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "abusive relationship",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "bullying",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "being bullied",
+                    "synonymOf" : "bullying"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "not eating",
+                    "synonymOf" : "body image"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "eating",
+                    "synonymOf" : "body image"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "addiction",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "addicted to",
+                    "synonymOf" : "addiction"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "substance use",
+                    "synonymOf" : "addiction"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "abuse",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "suicide",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "sexual assault",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "rape",
+                    "synonymOf" : "sexual assault"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "raped",
+                    "synonymOf" : "sexual assault"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "kill myself",
+                    "synonymOf" : "suicide"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "I want to kill myself",
+                    "synonymOf" : "suicide"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "end my life",
+                    "synonymOf" : "suicide"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "anger",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "angry",
+                    "synonymOf" : "anger"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "frustrated",
+                    "synonymOf" : "anger"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "frustration",
+                    "synonymOf" : "anger"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "panic attack",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "panicked",
+                    "synonymOf" : "panic attack"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "mad",
+                    "synonymOf" : "anger"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "kill",
+                    "synonymOf" : "suicide"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "I want kill myself",
+                    "synonymOf" : "suicide"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "motivation",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "unmotivated",
+                    "synonymOf" : "motivation"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "anxious",
+                    "synonymOf" : "anxiety"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "stressed out",
+                    "synonymOf" : "anxiety"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "stress",
+                    "synonymOf" : "anxiety"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "anxiety and stress",
+                    "synonymOf" : "anxiety"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "stress and anxiety",
+                    "synonymOf" : "anxiety"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "stressed",
+                    "synonymOf" : "anxiety"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "making fun of me",
+                    "synonymOf" : "conflicts"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "teasing",
+                    "synonymOf" : "conflicts"
+                }
+            ]
+        }
+    ],
+    "tasks" : [
+        {
+            "uniqueName" : "get_preresource_other",
+            "actions" : {
+                "actions" : [
+                    {
+                        "redirect" : "https://learning123-4522.twil.io/testing" //redirects to main function
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "startDiagnosesPRE",
+            "actions" : {
+                "actions" : [
+                    {
+                        "redirect" : "https://learning123-4522.twil.io/testing"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "self"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "my self"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yes please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sure"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yes"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "me"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "for me"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want resources for myself"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "for myself"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "myself"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "get_resource_other",
+            "actions" : {
+                "actions" : [
+                    {
+                        "redirect" : "https://learning123-4522.twil.io/testing"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "startDiagnosesOther",
+            "actions" : {
+                "actions" : [
+                    {
+                        "redirect" : "https://learning123-4522.twil.io/testing"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "someone"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "someone else"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "other"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "start_over",
+            "actions" : {
+                "actions" : [
+                    {
+                        "redirect" : "https://learning123-4522.twil.io/testing"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "not right"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "nah "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that is incorrect"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "wrong"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "grounding_exercise_neg",
+            "actions" : {
+                "actions" : [
+                    {
+                        "redirect" : "https://learning123-4522.twil.io/testing"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "please no"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no way"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "im good"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "grounding_exercise",
+            "actions" : {
+                "actions" : [
+                    {
+                        "redirect" : "https://learning123-4522.twil.io/testing"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "why not"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "please yes"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yes please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "of course"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sure thing"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "ok"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "okay"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sounds good"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yes"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sure"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "get_resource",
+            "actions" : {
+                "actions" : [
+                    {
+                        "redirect" : "https://learning123-4522.twil.io/testing"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yes"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "DONE"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "done"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yes please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yup"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that is right"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "correct"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's correct"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yes"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yeah"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "get_pre_resource",
+            "actions" : {
+                "actions" : [
+                    {
+                        "redirect" : "https://learning123-4522.twil.io/testing"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "continue_diagnoses",
+            "actions" : {
+                "actions" : [
+                    {
+                        "redirect" : "https://learning123-4522.twil.io/testing"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "of course you can"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yeah you can"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yes you can"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "why not"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sure thing"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "of course"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "ye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yeah"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sounds good"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "okay"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sure"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yes please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yes"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "start_crisis_diagnoses",
+            "actions" : {
+                "actions" : [
+                    {
+                        "redirect" : "https://learning123-4522.twil.io/testing"
+                    }
+                ]
+            },
+            "fields" : [
+                {
+                    "uniqueName" : "reason",
+                    "fieldType" : "reason"
+                },
+                {
+                    "uniqueName" : "Person",
+                    "fieldType" : "Person"
+                },
+                {
+                    "uniqueName" : "Crisis",
+                    "fieldType" : "crisis"
+                }
+            ],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "My {Person} is {Crisis}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I dont have any {Crisis}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "No {Crisis}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "A lack of {Crisis}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I dont have any {Crisis}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I have been feeling really {Crisis} lately."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I am feeling {Crisis} because {reason}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I was recently {Crisis}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I was {Crisis}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want to {Crisis}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I am feeling really {Crisis} right now"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Me and my {Person} are in a {Crisis}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I have {Crisis} because"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I have a lot of {Crisis} because"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Me and my {Person} are in a {Crisis}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Me and my {Person} got into a {Crisis}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "My {Person} {Crisis} with me."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Me and my {Person} {Crisis}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I feel like {Crisis}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want to {Crisis} myself"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want to {Crisis}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Recently my {Person} {Crisis}."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "My {Person} {Crisis}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I am feeling a lot of {Crisis}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "My {Crisis}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I am struggling with a {Crisis} "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I am having a {Crisis} right now"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I am having a {Crisis} "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I have been struggling with {Crisis} often"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I have been struggling with {Crisis} recently"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I have been struggling with {Crisis} lately"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I am struggling with severe {Crisis}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I have high {Crisis}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I have {Crisis}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want to talk to someone about my {Crisis}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I am feeling very {Crisis}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "{Crisis}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I am struggling with feeling {Crisis}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I am struggling with {Crisis}"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I feel {Crisis}"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "greeting",
+            "actions" : {
+                "actions" : [
+                    {
+                        "redirect" : "https://learning123-4522.twil.io/testing"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "resources"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "assalaam alaikum "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "asalaam alaikum"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "salam"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Salaam"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "help"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "resource"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "crisis"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "start"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "START"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what do you do"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sup"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yo"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "whatsup"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi there."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what can you do"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hey"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi there"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi!"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "heya"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hello."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what'us up"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hello"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good morning"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good afternoon"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hi"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "goodbye",
+            "actions" : {
+                "actions" : [
+                    {
+                        "redirect" : "https://learning123-4522.twil.io/testing"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "thank yo u"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good bye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "bye bye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "stop talking"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "stop"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "see ya"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "goodnight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cancel"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "goodbye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "go away"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that is all thank you"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's all for today"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that would be all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that would be all thanks"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "fallback",
+            "actions" : {
+                "actions" : [
+                    {
+                        "redirect" : "https://learning123-4522.twil.io/testing"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "collect_fallback",
+            "actions" : {
+                "actions" : [
+                    {
+                        "redirect" : "https://learning123-4522.twil.io/testing"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        }
+    ],
+    "modelBuild" : {
+        "uniqueName" : "Comfort_Companion_17-2-2022_9.41.15pm"
+    }
+}
