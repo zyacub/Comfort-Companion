@@ -1,4 +1,4 @@
-# Comfort-Companion 
+# Comfort-Companion (DEPRECIATED, AS TWILIO SHUT DOWN THE AUTOPILOT SERVICE :( )
 AI based mental health textline to increase accessibility to resources
 
 Comfort Companion uses TWILIO autopilot along with a MYSQL database to store the resources. Back end is coded entire in JavaScript and is included in the functions/functions.js file
